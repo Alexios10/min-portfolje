@@ -191,6 +191,61 @@ const Index = () => {
         className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20" />
+
+        {/* Floating Water Bubbles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {Array.from({ length: 25 }).map((_, i) => {
+            const size = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
+            const left = Math.floor(Math.random() * 100); // vw
+            const bottomStart = -100; // px
+            const bottomEnd = Math.floor(Math.random() * 100); // vh
+            const translateX = Math.floor(Math.random() * 300) - 100; // -100 to 200px
+            const duration = Math.floor(Math.random() * (15 - 3 + 1)) + 3; // 3-15s
+            const delay = Math.random() * 5; // 0-5s
+            const bgpos = i % 2 === 0 ? "top right" : "center";
+            const animName = `bubble-move-${i}`;
+            // Keyframes for this bubble
+            const keyframes = `@keyframes ${animName} {\n  0% { bottom: ${bottomStart}px; opacity: 0.8; transform: translate(0,0); }\n  100% { bottom: ${bottomEnd}vh; opacity: 0; transform: translate(${translateX}px,0); }\n}`;
+            return (
+              <>
+                <style key={`style-${i}`}>{keyframes}</style>
+                <div
+                  key={i}
+                  className="bubble"
+                  style={{
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    left: `${left}vw`,
+                    bottom: `${bottomStart}px`,
+                    position: "absolute",
+                    borderRadius: "100%",
+                    opacity: 0.8,
+                    background: `radial-gradient(ellipse at ${bgpos}, #b8c6c6 0%,#30b3d3 46%,#20628c 100%)`,
+                    animation: `${animName} ${duration}s linear ${delay}s infinite`,
+                    zIndex: 1,
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      borderRadius: "100%",
+                      pointerEvents: "none",
+                      background:
+                        "radial-gradient(circle at 60% 30%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.0) 60%)",
+                      filter: "blur(1.5px)",
+                    }}
+                  />
+                </div>
+              </>
+            );
+          })}
+        </div>
+        {/* END */}
+
         <div className="container mx-auto px-6 text-center relative z-10">
           <div
             className={`transition-all duration-1000 ${
