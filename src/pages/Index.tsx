@@ -16,7 +16,13 @@ import { SiMysql, SiTypescript } from "react-icons/si";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
@@ -131,9 +137,20 @@ const Index = () => {
                 side="right"
                 className="w-72 bg-gradient-to-br from-slate-900/95 via-purple-900/95 to-slate-900/95 backdrop-blur-lg border-l border-white/10"
               >
+                {/* Accessible title for Radix UI Dialog (Sheet) */}
+                <SheetTitle asChild>
+                  <span className="sr-only">Navigasjonsmeny</span>
+                </SheetTitle>
+                {/* Accessible description for Radix UI Dialog (Sheet) */}
+                <SheetDescription asChild>
+                  <span className="sr-only">
+                    Navigasjonsmeny for mobil. Lukk menyen for å gå tilbake til
+                    innholdet.
+                  </span>
+                </SheetDescription>
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between mb-8 pt-4">
-                    <h2 className="text-xl font-bold text-white">Menu</h2>
+                    <h2 className="text-xl font-bold text-white">Meny</h2>
                   </div>
 
                   <nav className="flex-1">
@@ -227,7 +244,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-black/20">
+      <section id="about" className="py-20 bg-black/20 min-h-screen">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
             Om Meg
@@ -296,7 +313,7 @@ const Index = () => {
       </section>
 
       {/* Project Section */}
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-20 min-h-screen">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
             Mine Prosjekter
