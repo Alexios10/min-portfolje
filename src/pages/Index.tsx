@@ -45,12 +45,15 @@ const Index = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React and Node.js",
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=400",
-      tech: ["React", "Node.js", "MongoDB"],
-      link: "#",
+      title:
+        "Nettside for å se nyheter og trailere av de nyeste filmer og serier",
+      description: `Movix er en webapplikasjon som lar brukere utforske de nyeste filmer og tv-serier, få tilgang til detaljert informasjon og se trailere. 
+      Med et responsivt design og integrering av moderne teknologi tilbyr Movix en sømløs filmopplevelse. Ved å integrere Redux i prosjektet mitt 
+      forbedret jeg strategien min for tilstandsstyring betydelig. Jeg brukte også Movie Database API for å hente de nyeste dataene.`,
+      image: "/public/assets/movix-combined.png",
+      tech: ["React", "Redux", "SCSS", "TMDB API"],
+      link: "https://movix-self-nine.vercel.app/",
+      code: "https://github.com/Alexios10/movix",
     },
     {
       title: "Task Management App",
@@ -60,6 +63,7 @@ const Index = () => {
         "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=400",
       tech: ["React", "Firebase", "Tailwind"],
       link: "#",
+      code: "#",
     },
     {
       title: "Weather Dashboard",
@@ -68,6 +72,7 @@ const Index = () => {
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400",
       tech: ["React", "API Integration", "CSS3"],
       link: "#",
+      code: "#",
     },
   ];
 
@@ -93,9 +98,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-md z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-white">
-              Velkommen til min portfølje
-            </h1>
+            <h1 className="text-2xl font-bold text-white">Velkommen</h1>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
@@ -114,7 +117,7 @@ const Index = () => {
               ))}
             </div>
 
-            {/* Mobile Menu Sheet */}
+            {/* Mobile Menu */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <button
@@ -180,7 +183,7 @@ const Index = () => {
             }`}
           >
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
-              <span>Hei, Jeg Er </span>
+              <span>Hei, Mitt Navn er </span>
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Sattar Rahim
               </span>
@@ -204,13 +207,15 @@ const Index = () => {
                 </Button>
               </a>
 
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-black hover:bg-white/10 hover:text-white px-8 py-3"
-              >
-                Last Ned CV
-              </Button>
+              <a href="/public/assets/Utvikler-CV.pdf" download>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/20 text-black hover:bg-white/10 hover:text-white px-8 py-3"
+                >
+                  Last Ned CV
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -309,10 +314,6 @@ const Index = () => {
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute top-4 right-4">
-                      <ExternalLink className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
@@ -330,6 +331,22 @@ const Index = () => {
                           {tech}
                         </span>
                       ))}
+                    </div>
+                    <div className="mt-4 flex items-center gap-5 text-slate-800">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg"
+                      >
+                        Nettside
+                      </a>
+                      <a
+                        href={project.code}
+                        target="_blank"
+                        className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg"
+                      >
+                        Kode
+                      </a>
                     </div>
                   </div>
                 </CardContent>
