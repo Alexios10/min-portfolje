@@ -13,6 +13,7 @@ import {
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiMysql, SiTypescript } from "react-icons/si";
+import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -62,14 +63,26 @@ const Index = () => {
       code: "https://github.com/Alexios10/movix",
     },
     {
-      title: "Task Management App",
-      description:
-        "A collaborative task management tool with real-time updates",
-      image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=400",
-      tech: ["React", "Firebase", "Tailwind"],
-      link: "#",
-      code: "#",
+      title: "Treningssenter Nettside",
+      description: `Dette er en nettside for vurdering av treningssentre i Oslo, 
+      hvor brukere kan se informasjon om hvert treningssenter, legge igjen vurderinger 
+      og skrive kommentarer. Hensikten med nettsiden er å hjelpe brukere med å finne det 
+      treningssenteret som passer best for deres behov. Prosjektet er fortsatt under utvikling og ikke fullført ennå.`,
+      image: "/public/assets/treningssentre.png",
+      tech: [
+        "React",
+        "Typescript",
+        "Tailwind CSS",
+        "Radix UI",
+        "Sonner (Toast)",
+        "C#",
+        ".NET",
+        "PostgreSQL",
+        "Railway (Hosting)",
+        "OAuth 2.0 (Google)",
+      ],
+      link: "https://training-hub-reviews.vercel.app/",
+      // code: "", **** // Coming soon
     },
     {
       title: "Weather Dashboard",
@@ -408,16 +421,18 @@ const Index = () => {
                       <a
                         href={project.link}
                         target="_blank"
-                        className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg"
+                        className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg flex items-center"
                       >
-                        Nettside
+                        <span>Live demo</span>
+                        <ExternalLink className="ml-1 w-4" />
                       </a>
                       <a
                         href={project.code}
                         target="_blank"
-                        className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg"
+                        className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg flex items-center"
                       >
-                        Kode
+                        <span>Kode</span>
+                        <FaGithub className="ml-1 w-4" />
                       </a>
                     </div>
                   </div>
@@ -436,6 +451,7 @@ const Index = () => {
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12">
+              {/* Left section */}
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xl md:text-2xl font-semibold text-white mb-6">
@@ -481,7 +497,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-
+              {/* Right section */}
               <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 md:p-8">
                 <form className="space-y-6">
                   <div>
@@ -526,6 +542,16 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Back to Top Button */}
+      <div
+        className="flex items-center justify-center relative"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <span className="bg-purple-600/20 absolute bottom-4 cursor-pointer hover:bg-purple-700/20 text-white rounded-full p-3 transition-all duration-300">
+          <MdKeyboardDoubleArrowUp size={30} />
+        </span>
+      </div>
 
       {/* Footer */}
       <footer className="py-8 bg-black/40 border-t border-white/10">
