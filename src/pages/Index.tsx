@@ -82,7 +82,7 @@ const Index = () => {
         "OAuth 2.0 (Google)",
       ],
       link: "https://training-hub-reviews.vercel.app/",
-      // code: "", **** // Coming soon
+      code: "",
     },
     {
       title: "Weather Dashboard",
@@ -205,7 +205,7 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20" />
 
-        {/* Floating Water Bubbles */}
+        {/* Floating Water Bubbles AI generated */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {Array.from({ length: 25 }).map((_, i) => {
             const size = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
@@ -430,8 +430,15 @@ const Index = () => {
                         href={project.code}
                         target="_blank"
                         className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg flex items-center"
+                        onClick={(e) => {
+                          if (project.code === "") {
+                            e.preventDefault();
+                          }
+                        }}
                       >
-                        <span>Kode</span>
+                        <span>
+                          {project.code === "" ? "Kommer snart" : "Kode"}
+                        </span>
                         <FaGithub className="ml-1 w-4" />
                       </a>
                     </div>
