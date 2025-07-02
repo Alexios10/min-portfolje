@@ -94,7 +94,7 @@ const Index = () => {
         "Nettside for å se nyheter og trailere av de nyeste filmer og serier",
       description: `Movix er en webapplikasjon som lar brukere utforske de nyeste filmer og tv-serier, få tilgang til detaljert informasjon og se trailere. 
       Med et responsivt design og integrering av moderne teknologi tilbyr Movix en sømløs filmopplevelse. Ved å integrere Redux i prosjektet mitt 
-      forbedret jeg strategien min for tilstandsstyring betydelig. Jeg brukte også Movie Database API for å hente de nyeste dataene.`,
+      forbedret jeg strategien min for tilstandsstyring betydelig. Jeg brukte også The Movie Database API for å hente de nyeste dataene.`,
       image: "/assets/movix-combined.png",
       tech: ["React", "Redux", "SCSS", "TMDB API"],
       link: "https://movix-self-nine.vercel.app/",
