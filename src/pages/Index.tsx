@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Mail, Phone, ExternalLink, Menu } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 // React icons
 import {
@@ -29,6 +30,43 @@ import { Badge } from "@/components/ui/badge";
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const [result, setResult] = useState<string | null>(null);
+  // Handle form input changes
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // EmailJS send handler
+  const handleSendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+    setResult(null);
+    try {
+      const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+      const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+      const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        PUBLIC_KEY
+      );
+      setResult("Takk for din melding! Jeg svarer så fort jeg kan.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      setResult("Noe gikk galt. Prøv igjen senere.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -85,13 +123,13 @@ const Index = () => {
       code: "",
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather application with beautiful UI",
+      title: "Kommer snart",
+      description: "Kommer snart! Dette prosjektet er under utvikling.",
       image:
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400",
-      tech: ["React", "API Integration", "CSS3"],
-      link: "#",
-      code: "#",
+      tech: ["", " ", ""],
+      // link: "", // Uncomment when link is available
+      // code: "",
     },
   ];
 
@@ -186,9 +224,15 @@ const Index = () => {
 
                   <div className="mt-auto pb-4">
                     <div className="flex items-center justify-center space-x-6 text-gray-400">
-                      <FaGithub className="w-5 h-5 hover:text-white transition-colors cursor-pointer" />
-                      <FaLinkedin className="w-5 h-5 hover:text-white transition-colors cursor-pointer" />
-                      <Mail className="w-5 h-5 hover:text-white transition-colors cursor-pointer" />
+                      <a href="https://github.com/Alexios10" target="_blank">
+                        <FaGithub className="w-5 h-5 hover:text-white transition-colors cursor-pointer" />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/sattar-rahim-082188236/"
+                        target="_blank"
+                      >
+                        <FaLinkedin className="w-5 h-5 hover:text-white transition-colors cursor-pointer" />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -205,7 +249,7 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20" />
 
-        {/* Floating Water Bubbles AI generated */}
+        {/* Floating Water Bubbles (AI generated) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {Array.from({ length: 25 }).map((_, i) => {
             const size = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
@@ -219,42 +263,40 @@ const Index = () => {
             const animName = `bubble-move-${i}`;
             // Keyframes for this bubble
             const keyframes = `@keyframes ${animName} {\n  0% { bottom: ${bottomStart}px; opacity: 0.8; transform: translate(0,0); }\n  100% { bottom: ${bottomEnd}vh; opacity: 0; transform: translate(${translateX}px,0); }\n}`;
-            return (
-              <>
-                <style key={`style-${i}`}>{keyframes}</style>
+            return [
+              <style key={`style-${i}`}>{keyframes}</style>,
+              <div
+                key={`bubble-${i}`}
+                className="bubble"
+                style={{
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  left: `${left}vw`,
+                  bottom: `${bottomStart}px`,
+                  position: "absolute",
+                  borderRadius: "100%",
+                  opacity: 0.8,
+                  background: `radial-gradient(ellipse at ${bgpos}, #b8c6c6 0%,#30b3d3 46%,#20628c 100%)`,
+                  animation: `${animName} ${duration}s linear ${delay}s infinite`,
+                  zIndex: 1,
+                }}
+              >
                 <div
-                  key={i}
-                  className="bubble"
                   style={{
-                    width: `${size}px`,
-                    height: `${size}px`,
-                    left: `${left}vw`,
-                    bottom: `${bottomStart}px`,
                     position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
                     borderRadius: "100%",
-                    opacity: 0.8,
-                    background: `radial-gradient(ellipse at ${bgpos}, #b8c6c6 0%,#30b3d3 46%,#20628c 100%)`,
-                    animation: `${animName} ${duration}s linear ${delay}s infinite`,
-                    zIndex: 1,
+                    pointerEvents: "none",
+                    background:
+                      "radial-gradient(circle at 60% 30%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.0) 60%)",
+                    filter: "blur(1.5px)",
                   }}
-                >
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      borderRadius: "100%",
-                      pointerEvents: "none",
-                      background:
-                        "radial-gradient(circle at 60% 30%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.0) 60%)",
-                      filter: "blur(1.5px)",
-                    }}
-                  />
-                </div>
-              </>
-            );
+                />
+              </div>,
+            ];
           })}
         </div>
         {/* END */}
@@ -506,13 +548,17 @@ const Index = () => {
               </div>
               {/* Right section */}
               <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 md:p-8">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSendEmail}>
                   <div>
                     <label className="block text-white font-medium mb-2">
                       Navn
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
                       placeholder="Ditt Navn"
                     />
@@ -524,6 +570,10 @@ const Index = () => {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
                       placeholder="din_epost@hotmail.com"
                     />
@@ -535,14 +585,25 @@ const Index = () => {
                     </label>
                     <textarea
                       rows={4}
+                      name="message"
+                      value={form.message}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors resize-none"
                       placeholder="La oss diskutere muligheter..."
                     />
                   </div>
 
-                  <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3">
-                    Send
+                  <Button
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3"
+                    type="submit"
+                    disabled={sending}
+                  >
+                    {sending ? "Sender..." : "Send"}
                   </Button>
+                  {result && (
+                    <div className="text-center text-white mt-4">{result}</div>
+                  )}
                 </form>
               </div>
             </div>
