@@ -95,7 +95,7 @@ const Index = () => {
       description: `Movix er en webapplikasjon som lar brukere utforske de nyeste filmer og tv-serier, få tilgang til detaljert informasjon og se trailere. 
       Med et responsivt design og integrering av moderne teknologi tilbyr Movix en sømløs filmopplevelse. Ved å integrere Redux i prosjektet mitt 
       forbedret jeg strategien min for tilstandsstyring betydelig. Jeg brukte også Movie Database API for å hente de nyeste dataene.`,
-      image: "/public/assets/movix-combined.png",
+      image: "/assets/movix-combined.png",
       tech: ["React", "Redux", "SCSS", "TMDB API"],
       link: "https://movix-self-nine.vercel.app/",
       code: "https://github.com/Alexios10/movix",
@@ -106,7 +106,7 @@ const Index = () => {
       hvor brukere kan se informasjon om hvert treningssenter, legge igjen vurderinger 
       og skrive kommentarer. Hensikten med nettsiden er å hjelpe brukere med å finne det 
       treningssenteret som passer best for deres behov. Prosjektet er fortsatt under utvikling og ikke fullført ennå.`,
-      image: "/public/assets/treningssentre.png",
+      image: "/assets/treningssentre.png",
       tech: [
         "React",
         "Typescript",
