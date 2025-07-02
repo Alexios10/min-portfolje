@@ -124,7 +124,7 @@ const Index = () => {
     },
     {
       title: "Kommer snart",
-      description: "Kommer snart! Dette prosjektet er under utvikling.",
+      description: "Dette prosjektet er under utvikling.",
       image:
         "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400",
       tech: ["", " ", ""],
