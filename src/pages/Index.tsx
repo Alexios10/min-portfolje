@@ -334,7 +334,7 @@ const Index = () => {
                 </Button>
               </a>
 
-              <a href="/public/assets/Utvikler-CV.pdf" download>
+              <a href="/assets/Utvikler-CV.pdf" download>
                 <Button
                   size="lg"
                   variant="outline"
