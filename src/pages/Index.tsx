@@ -113,24 +113,24 @@ const Index = () => {
         "Typescript",
         "Tailwind CSS",
         "Radix UI",
-        "Sonner (Toast)",
         "C#",
         ".NET",
         "PostgreSQL",
         "Railway (Hosting)",
-        "OAuth 2.0 (Google)",
       ],
       link: "https://training-hub-reviews.vercel.app/",
       code: "",
     },
     {
-      title: "Kommer snart",
-      description: "Dette prosjektet er under utvikling.",
-      image:
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400",
-      tech: ["", " ", ""],
-      // link: "", // Uncomment when link is available
-      // code: "",
+      title: "Værmeldinga",
+      description: `En enkel værmelding-applikasjon som viser oppdatert værdata for en valgt by, inkludert temperatur, 
+        vind, luftfuktighet og værforhold. Brukeren kan enkelt søke etter ulike byer og få en oversiktlig 
+        presentasjon av været akkurat nå. Applikasjonen benytter OpenWeatherMap API for å hente sanntidsdata, 
+        og har et responsivt og brukervennlig design som fungerer på både mobil og desktop.`,
+      image: "/assets/vaarmeldinga.png",
+      tech: ["React", "Typescript", "Tailwind CSS", "Openweathermap API"],
+      link: "https://v-rmeldinga.vercel.app/",
+      code: "https://github.com/Alexios10/v-rmeldinga.git",
     },
   ];
 
