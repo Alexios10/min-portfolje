@@ -317,9 +317,11 @@ const Index = () => {
               </span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Frontend og Mobilutviklings Student & Fremtidig Full-Stack
-              Utvikler
+              Frontend & Mobilutvikling Student
+              <p className="text-purple-400"> Og</p>
+              <p>Fremtidig Full-Stack Utvikler</p>
             </p>
+            <p></p>
             <p className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
               Lidenskapelig opptatt av å skape innovative løsninger og bygge
               fantastiske brukeropplevelser. Klar til å bidra til teamet ditt
