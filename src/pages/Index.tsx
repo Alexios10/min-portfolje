@@ -122,12 +122,12 @@ const Index = () => {
       code: "",
     },
     {
-      title: "Værmeldinga",
+      title: "Værmeldingen",
       description: `En enkel værmelding-applikasjon som viser oppdatert værdata for en valgt by, inkludert temperatur, 
         vind, luftfuktighet og værforhold. Brukeren kan enkelt søke etter ulike byer og få en oversiktlig 
         presentasjon av været akkurat nå. Applikasjonen benytter OpenWeatherMap API for å hente sanntidsdata, 
         og har et responsivt og brukervennlig design som fungerer på både mobil og desktop.`,
-      image: "/assets/vaarmeldinga.png",
+      image: "/assets/vaarmeldingen.png",
       tech: ["React", "Typescript", "Tailwind CSS", "Openweathermap API"],
       link: "https://v-rmeldinga.vercel.app/",
       code: "https://github.com/Alexios10/v-rmeldinga.git",
