@@ -472,6 +472,7 @@ const Index = () => {
                         src={project.image}
                         alt={project.title}
                         className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
                       />
                     </div>
                     <div className="p-6">
