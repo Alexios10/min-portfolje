@@ -132,8 +132,8 @@ const Index = () => {
       description: `Dette er en nettside for vurdering av treningssentre i Oslo, 
       hvor brukere kan se informasjon om hvert treningssenter, legge igjen vurderinger 
       og skrive kommentarer. Hensikten med nettsiden er å hjelpe brukere med å finne det 
-      treningssenteret som passer best for deres behov. Prosjektet er fortsatt under utvikling og ikke helt fullført ennå.
-      Mangler bare å få til sånn at brukeren kan logge inn med Google OAuth Og noe design og UI forbedringer.`,
+      treningssenteret som passer best for deres behov. Prosjektet er fortsatt under utvikling og ikke helt fullført ennå. 
+      Mangle implementering av Google auth`,
       image: "/assets/treningssentre.png",
       tech: [
         "React",
