@@ -145,8 +145,8 @@ const Index = () => {
         "PostgreSQL",
         "Railway (Hosting)",
       ],
-      link: "https://training-hub-reviews.vercel.app/",
-      code: "",
+      link: "https://bestetreningssenter.vercel.app/",
+      code: "https://github.com/Alexios10/bestetreningssenter.git",
     },
     {
       title: "Værmeldingen",
@@ -505,15 +505,8 @@ const Index = () => {
                           href={project.code}
                           target="_blank"
                           className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg flex items-center"
-                          onClick={(e) => {
-                            if (project.code === "") {
-                              e.preventDefault();
-                            }
-                          }}
                         >
-                          <span>
-                            {project.code === "" ? "Kommer snart" : "Kode"}
-                          </span>
+                          Kode
                           <FaGithub className="ml-1 w-4" />
                         </a>
                       </div>
