@@ -87,6 +87,10 @@ const Index = () => {
         PUBLIC_KEY
       );
       setResult("Takk for din melding! Jeg svarer så fort jeg kan.");
+      setTimeout(() => {
+        setResult(null);
+      }, 3000);
+
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
       setResult("Noe gikk galt. Prøv igjen senere.");
@@ -572,6 +576,7 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
+
                 {/* Right section */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 md:p-8">
                   <form className="space-y-6" onSubmit={handleSendEmail}>
@@ -592,7 +597,7 @@ const Index = () => {
 
                     <div>
                       <label className="block text-white font-medium mb-2">
-                        Epost
+                        E-post
                       </label>
                       <input
                         type="email"
@@ -648,15 +653,6 @@ const Index = () => {
             <MdKeyboardDoubleArrowUp size={30} />
           </span>
         </div>
-
-        {/* Footer */}
-        <footer className="py-8 bg-black/40 border-t border-white/10">
-          <div className="container mx-auto px-6 text-center">
-            <p className="text-gray-400">
-              © 2025 Sattar Rahim. Utviklet med engasjement og dedikasjon.
-            </p>
-          </div>
-        </footer>
       </div>
     </>
   );
