@@ -67,10 +67,13 @@ export const Contact: FC<ContactSectionProps> = ({
                 <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                   <FaLinkedin className="w-6 h-6 text-blue-400" />
                   <div>
-                    <p className="text-white font-medium">LinkedIn</p>
-                    <p className="text-gray-400 text-sm md:text-base">
-                      https://www.linkedin.com/in/sattar-rahim-082188236/
-                    </p>
+                    <a
+                      href="https://www.linkedin.com/in/sattar-rahim-082188236/"
+                      target="_blank"
+                      className="text-gray-400 text-sm md:text-base"
+                    >
+                      <span className="text-white font-medium">LinkedIn</span>
+                    </a>
                   </div>
                 </div>
               </div>
