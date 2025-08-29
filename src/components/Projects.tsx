@@ -5,8 +5,7 @@ import { FaGithub } from "react-icons/fa";
 export const Projects = () => {
   const projects = [
     {
-      title:
-        "Nettside for å se nyheter og trailere av de nyeste filmer og serier",
+      title: "Movix",
       description: `Movix er en webapplikasjon som lar brukere utforske de nyeste filmer og tv-serier, få tilgang til detaljert informasjon og se trailere. 
       Med et responsivt design og integrering av moderne teknologi tilbyr Movix en sømløs filmopplevelse. Ved å integrere Redux i prosjektet mitt 
       forbedret jeg strategien min for tilstandsstyring betydelig. Jeg brukte også The Movie Database API for å hente de nyeste dataene.`,
@@ -16,8 +15,8 @@ export const Projects = () => {
       code: "https://github.com/Alexios10/movix",
     },
     {
-      title: "Treningssenter Nettside",
-      description: `Dette er en nettside for vurdering av treningssentre i Oslo, 
+      title: "Beste Treningssenter",
+      description: `En nettside for vurdering av treningssentre i Oslo, 
       hvor brukere kan se informasjon om hvert treningssenter, legge igjen vurderinger 
       og skrive kommentarer. Hensikten med nettsiden er å hjelpe brukere med å finne det 
       treningssenteret som passer best for deres behov. Prosjektet er fortsatt under utvikling og ikke helt fullført ennå. 
@@ -37,7 +36,7 @@ export const Projects = () => {
       code: "https://github.com/Alexios10/bestetreningssenter.git",
     },
     {
-      title: "Værmeldingen",
+      title: "Vær App",
       description: `En enkel værmelding-applikasjon som viser oppdatert værdata for en valgt by, inkludert temperatur, 
         vind, luftfuktighet og værforhold. Brukeren kan enkelt søke etter ulike byer og få en oversiktlig 
         presentasjon av været akkurat nå. Applikasjonen benytter OpenWeatherMap API for å hente sanntidsdata, 
