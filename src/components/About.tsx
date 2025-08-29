@@ -83,12 +83,9 @@ export const About = () => {
                   <tech.icon
                     className={`w-8 h-8 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
                   />
-                  <Badge
-                    variant="default"
-                    className="text-xs font-medium cursor-default bg-white/10 text-gray-300 border-white/20"
-                  >
+                  <span className="text-white/50 text-sm group-hover:text-white transition-colors duration-300">
                     {tech.name}
-                  </Badge>
+                  </span>
                 </div>
               ))}
             </div>
