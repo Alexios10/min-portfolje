@@ -35,10 +35,11 @@ export const Contact: FC<ContactSectionProps> = ({
                   La oss samarbeide!
                 </h3>
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                  Jeg søker aktivt etter praksisplasser og muligheter på "Entry
-                  level" der jeg kan bidra til innovative prosjekter og utvikle
-                  meg som utvikler. La oss diskutere hvordan jeg kan tilføre
-                  verdi til teamet ditt!
+                  Jeg er snart ferdig utdannet og ser etter spennende muligheter
+                  på juniornivå. Jeg ønsker å bidra til engasjerende prosjekter
+                  samtidig som jeg videreutvikler meg som utvikler. Ta gjerne
+                  kontakt – jeg vil gjerne høre mer om hvordan jeg kan være til
+                  nytte for teamet ditt.
                 </p>
               </div>
 
