@@ -9,7 +9,9 @@ import {
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiMysql, SiTypescript } from "react-icons/si";
-import { Badge } from "./ui/badge";
+import { TbBrandCSharp } from "react-icons/tb";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiKotlin } from "react-icons/si";
 
 export const About = () => {
   const technologies = [
@@ -20,10 +22,14 @@ export const About = () => {
       icon: IoLogoJavascript,
       color: "text-yellow-500",
     },
-    { name: "React", icon: FaReact, color: "text-cyan-500" },
-    { name: "Tailwind", icon: RiTailwindCssFill, color: "text-teal-500" },
-    { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
     { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
+    { name: "React", icon: FaReact, color: "text-cyan-500" },
+    { name: "C#", icon: TbBrandCSharp, color: "text-cyan-500" },
+    { name: "Kotlin", icon: SiKotlin, color: "text-cyan-500" },
+    { name: "PostgreSQL", icon: BiLogoPostgresql, color: "text-cyan-500" },
+    { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
+
+    { name: "Tailwind", icon: RiTailwindCssFill, color: "text-teal-500" },
     { name: "Git", icon: FaGitAlt, color: "text-red-500" },
     { name: "GitHub", icon: FaGithub, color: "text-gray-400" },
   ];

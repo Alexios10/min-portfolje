@@ -29,13 +29,14 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
               </span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Frontend & Mobilutvikling Student Og Fremtidig Full-Stack Utvikler
+              Frontend & Mobilutviklings Student Og Fremtidig Full-Stack
+              Utvikler
             </p>
             <p></p>
             <p className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-              Lidenskapelig opptatt av å skape innovative løsninger og bygge
-              fantastiske brukeropplevelser. Klar til å bidra til teamet ditt
-              med friske ideer og engasjement.
+              Jeg liker å jobbe med å finne smarte løsninger og skape gode
+              opplevelser for brukerne. Jeg er klar for å bidra med både
+              engasjement og idéer i et team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#projects">
