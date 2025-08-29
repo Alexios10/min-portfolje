@@ -34,7 +34,7 @@ export const Projects = () => {
         "Railway (Hosting)",
       ],
       link: "https://training-hub-reviews.vercel.app/",
-      code: "",
+      code: "https://github.com/Alexios10/bestetreningssenter.git",
     },
     {
       title: "Værmeldingen",
@@ -93,7 +93,7 @@ export const Projects = () => {
                       target="_blank"
                       className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg flex items-center"
                     >
-                      <span>Live demo</span>
+                      <span>Live</span>
                       <ExternalLink className="ml-1 w-4" />
                     </a>
                     <a
@@ -106,9 +106,7 @@ export const Projects = () => {
                         }
                       }}
                     >
-                      <span>
-                        {project.code === "" ? "Kommer snart" : "Kode"}
-                      </span>
+                      <span>Kode</span>
                       <FaGithub className="ml-1 w-4" />
                     </a>
                   </div>
