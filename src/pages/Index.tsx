@@ -3,7 +3,6 @@ import emailjs from "@emailjs/browser";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
 import Navigation from "@/components/Navigation";
-import AnimatedDecorations from "@/components/AnimatedDecorations";
 import Hero from "@/components/Hero";
 import { About } from "@/components/About";
 import { Projects } from "@/components/Projects";
@@ -91,8 +90,6 @@ const Index = () => {
       <style>{textFocusInStyle}</style>
       <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <Navigation />
-        {/* Hero section background animation */}
-        <AnimatedDecorations />
         <Hero isVisible={isVisible} />
         <About />
         <Projects />
