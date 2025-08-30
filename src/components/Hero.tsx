@@ -37,48 +37,52 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
           </div>
 
           {/* Right side - Text content */}
-          <div className="order-1 md:order-2 text-left space-y-6">
-            <h1 className="text-4xl md:text-6xl font-medium tracking-tight">
-              <span className="text-white">Hei! Jeg er </span>
-              <span className="bg-gradient-to-r from-purple-400 to-violet-400 text-transparent bg-clip-text">
-                Sattar Rahim
-              </span>
-            </h1>
+          <div className="flex justify-center items-center h-full order-1">
+            {" "}
+            <div className="space-y-6 flex flex-col items-center">
+              <h1 className="text-4xl md:text-6xl font-medium tracking-tight">
+                <span className="text-white">Hei! Jeg er </span>
+                <span className="bg-gradient-to-r from-purple-400 to-violet-400 text-transparent bg-clip-text">
+                  Sattar Rahim
+                </span>
+              </h1>
 
-            <div className="space-y-2">
-              <h2 className="text-2xl md:text-4xl text-white font-light">
-                En Utvikler som
-              </h2>
-              <p className="text-3xl md:text-5xl font-medium">
-                <span className="text-white">Skaper </span>
-                <span className="text-purple-400">innovative</span>
-                <span className="text-white"> løsninger...</span>
-              </p>
-              <p className="text-gray-400 text-lg mt-4 max-w-xl">
-                Engasjert utvikler under utdanning i frontend og mobilutvikling,
-                med mål om å skape digitale opplevelser som gjør en forskjell.
-              </p>
-            </div>
+              <div className="space-y-2 flex flex-col items-center md:items-start">
+                <h2 className="text-2xl md:text-4xl text-white font-light">
+                  En Utvikler som
+                </h2>
+                <p className="text-3xl md:text-5xl font-medium">
+                  <span className="text-white">Skaper </span>
+                  <span className="text-purple-400">innovative</span>
+                  <span className="text-white"> løsninger...</span>
+                </p>
+                <p className="text-gray-400 text-lg mt-4 w-full sm:max-w-xl text-center">
+                  Engasjert utvikler under utdanning i frontend og
+                  mobilutvikling, med mål om å skape digitale opplevelser som
+                  gjør en forskjell.
+                </p>
+              </div>
 
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <a href="#projects">
-                <Button
-                  size="lg"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
-                >
-                  Se Mine Prosjekter
-                </Button>
-              </a>
-              <a href="/assets/Utvikler-CV.pdf" download>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-purple-600/20 hover:bg-purple-600/10 hover:text-white px-8 py-6 text-lg"
-                >
-                  Last Ned CV
-                </Button>
-              </a>
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <a href="#projects">
+                  <Button
+                    size="lg"
+                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
+                  >
+                    Se Mine Prosjekter
+                  </Button>
+                </a>
+                <a href="/assets/Utvikler-CV.pdf" download>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-purple-600/20 hover:bg-purple-600/10 hover:text-white px-8 py-6 text-lg"
+                  >
+                    Last Ned CV
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
