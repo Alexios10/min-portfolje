@@ -78,60 +78,57 @@ export const Contact: FC<ContactSectionProps> = ({
             </div>
 
             {/* Right section */}
-            <div className="bg-purple-600/10 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl">
-              <form className="space-y-6" onSubmit={handleSendEmail}>
-                <div>
-                  <label className="block text-white font-medium mb-2">
-                    Navn
-                  </label>
+            <div className="bg-purple-600/10 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-2xl border border-purple-500/20">
+              <h2 className="text-4xl font-bold text-white mb-8">Ta Kontakt</h2>
+              <form className="space-y-8" onSubmit={handleSendEmail}>
+                <div className="relative">
                   <input
                     type="text"
                     name="name"
                     value={form.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-purple-600/10 border border-purple-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300"
+                    className="w-full pb-2 bg-transparent border-b-2 border-purple-500/30 text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none transition-all duration-300"
                     placeholder="Ditt Navn"
                   />
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 peer-focus:w-full" />
                 </div>
 
-                <div>
-                  <label className="block text-white font-medium mb-2">
-                    Epost
-                  </label>
+                <div className="relative">
                   <input
                     type="email"
                     name="email"
                     value={form.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-purple-600/10 border border-purple-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300"
+                    className="w-full pb-2 bg-transparent border-b-2 border-purple-500/30 text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none transition-all duration-300"
                     placeholder="din_epost@hotmail.com"
                   />
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 peer-focus:w-full" />
                 </div>
 
-                <div>
-                  <label className="block text-white font-medium mb-2">
-                    Melding
-                  </label>
+                <div className="relative">
                   <textarea
                     rows={4}
                     name="message"
                     value={form.message}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-purple-600/10 border border-purple-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300 resize-none"
+                    className="w-full pb-2 bg-transparent border-b-2 border-purple-500/30 text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none transition-all duration-300"
                     placeholder="La oss diskutere muligheter..."
                   />
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 peer-focus:w-full" />
                 </div>
 
-                <Button
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-700 hover:to-purple-800 text-white py-3 shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
-                  type="submit"
-                  disabled={sending}
-                >
-                  {sending ? "Sender..." : "Send"}
-                </Button>
+                <div className="pt-4">
+                  <Button
+                    className="w-full bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-full text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                    type="submit"
+                    disabled={sending}
+                  >
+                    {sending ? "Sender..." : "Send"}
+                  </Button>
+                </div>
                 {result && (
                   <div className="text-center text-white mt-4">{result}</div>
                 )}
