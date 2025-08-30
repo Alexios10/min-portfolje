@@ -7,52 +7,74 @@ interface HeroSectionProps {
 
 const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
   return (
-    <main>
-      <section
-        id="home"
-        className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20" />
+    <section
+      id="home"
+      className="min-h-screen bg-[#0a0118] flex items-center relative overflow-hidden pt-20 md:pt-0"
+    >
+      {/* Purple gradient effect */}
+      <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent" />
 
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
-              <span>Hei, Mitt Navn er </span>
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent text-focus-in">
+      <div className="container mx-auto px-6 py-12">
+        <div
+          className={`grid md:grid-cols-2 gap-8 items-center transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          {/* Left side - Avatar/Illustration */}
+          <div className="relative order-2 md:order-1">
+            <div className="aspect-square relative">
+              {/* Glow effect behind the image */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 via-purple-600/50 to-transparent blur-3xl" />
+
+              <div className="relative z-10 w-full h-full flex items-center justify-center">
+                <img
+                  src="/assets/avatar.png"
+                  alt="avatar"
+                  className="w-[50%] h-[50%] object-contain drop-shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right side - Text content */}
+          <div className="order-1 md:order-2 text-left space-y-6">
+            <h1 className="text-4xl md:text-6xl font-medium tracking-tight">
+              <span className="text-white">Hei! Jeg er </span>
+              <span className="bg-gradient-to-r from-purple-400 to-violet-400 text-transparent bg-clip-text">
                 Sattar Rahim
               </span>
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Frontend & Mobilutviklings Student Og Fremtidig Full-Stack
-              Utvikler
-            </p>
-            <p></p>
-            <p className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-              Jeg liker å jobbe med å finne smarte løsninger og skape gode
-              opplevelser for brukerne. Jeg er klar for å bidra med både
-              engasjement og idéer i et team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="space-y-2">
+              <h2 className="text-2xl md:text-4xl text-white font-light">
+                En Utvikler som
+              </h2>
+              <p className="text-3xl md:text-5xl font-medium">
+                <span className="text-white">Skaper </span>
+                <span className="text-purple-400">innovative</span>
+                <span className="text-white"> løsninger...</span>
+              </p>
+              <p className="text-gray-400 text-lg mt-4 max-w-xl">
+                Frontend & Mobilutviklings Student med lidenskap for å bygge
+                eksepsjonelle brukeropplevelser og gi liv til ideer.
+              </p>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <a href="#projects">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
                 >
                   Se Mine Prosjekter
                 </Button>
               </a>
-
               <a href="/assets/Utvikler-CV.pdf" download>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 text-black hover:bg-white/10 hover:text-white px-8 py-3"
+                  className="border-purple-600/20 hover:bg-purple-600/10 hover:text-white px-8 py-6 text-lg"
                 >
                   Last Ned CV
                 </Button>
@@ -60,8 +82,8 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 
