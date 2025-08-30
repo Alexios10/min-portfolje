@@ -44,7 +44,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="py-28 bg-[#0a0118] min-h-screen relative overflow-hidden"
+      className="py-32 bg-[#0a0118] min-h-screen relative overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent" />
@@ -109,11 +109,11 @@ export const About = () => {
                 key={index + 7}
                 className={`relative group ${styles.floatingIcon}`}
                 style={{
-                  animationDelay: `${(index + 7) * 0.1}s`,
+                  animationDelay: `${index * 1}s`,
                 }}
               >
                 <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl scale-125 group-hover:bg-purple-500/30 transition-all duration-300" />
-                <TooltipProvider>
+                <TooltipProvider delayDuration={100}>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div className="relative bg-[#1a1a1a] p-4 rounded-full transform hover:scale-110 transition-transform duration-300">

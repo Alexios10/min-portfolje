@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
@@ -49,7 +48,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-28 min-h-screen bg-[#0a0118]">
+    <section id="projects" className="py-32 min-h-screen bg-[#0a0118]">
       <div className="container mx-auto px-6">
         <div className="space-y-32">
           {projects.map((project, index) => (
@@ -60,11 +59,11 @@ export const Projects = () => {
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                   {/* Project Image */}
                   <div className="lg:w-3/5 relative group">
-                    <div className="absolute inset-0 bg-purple-500/20 rounded-xl group-hover:bg-purple-500/30 transition-all duration-300" />
+                    <div className="absolute inset-0 bg-gray-500/20 rounded-xl group-hover:bg-gray-500/30 transition-all duration-300" />
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full rounded-xl shadow-2xl group-hover:scale-[1.02] transition-all duration-300"
+                      className="w-full rounded-xl shadow-2xl group-hover:scale-[1.01] transition-all duration-300"
                       loading="lazy"
                     />
                   </div>
@@ -96,7 +95,7 @@ export const Projects = () => {
                       <a
                         href={project.link}
                         target="_blank"
-                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center"
+                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center border border-purple-400/60"
                       >
                         <span>Live</span>
                         <ExternalLink className="ml-2 w-4 h-4" />
@@ -104,7 +103,7 @@ export const Projects = () => {
                       <a
                         href={project.code}
                         target="_blank"
-                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center"
+                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center border border-purple-400/60"
                         onClick={(e) => {
                           if (project.code === "") {
                             e.preventDefault();

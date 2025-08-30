@@ -21,11 +21,9 @@ export const Contact: FC<ContactSectionProps> = ({
   result = null,
 }) => {
   return (
-    <section id="contact" className="min-h-screen relative bg-black/20 py-28">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
-          Ta Kontakt
-        </h2>
+    <section id="contact" className="min-h-screen relative bg-[#0a0118] py-32">
+      <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent opacity-60" />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Left section */}
@@ -44,8 +42,8 @@ export const Contact: FC<ContactSectionProps> = ({
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <Mail className="w-6 h-6 text-purple-400" />
+                <div className="flex items-center gap-4 p-4 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg backdrop-blur-sm transition-all duration-300 group">
+                  <Mail className="w-6 h-6 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-white font-medium">Epost</p>
                     <p className="text-gray-400 text-sm md:text-base">
@@ -54,8 +52,8 @@ export const Contact: FC<ContactSectionProps> = ({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <Phone className="w-6 h-6 text-green-400" />
+                <div className="flex items-center gap-4 p-4 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg backdrop-blur-sm transition-all duration-300 group">
+                  <Phone className="w-6 h-6 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-white font-medium">Mobil</p>
                     <p className="text-gray-400 text-sm md:text-base">
@@ -64,8 +62,8 @@ export const Contact: FC<ContactSectionProps> = ({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
-                  <FaLinkedin className="w-6 h-6 text-blue-400" />
+                <div className="flex items-center gap-4 p-4 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg backdrop-blur-sm transition-all duration-300 group">
+                  <FaLinkedin className="w-6 h-6 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <a
                       href="https://www.linkedin.com/in/sattar-rahim-082188236/"
@@ -80,7 +78,7 @@ export const Contact: FC<ContactSectionProps> = ({
             </div>
 
             {/* Right section */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 md:p-8">
+            <div className="bg-purple-600/10 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl">
               <form className="space-y-6" onSubmit={handleSendEmail}>
                 <div>
                   <label className="block text-white font-medium mb-2">
@@ -92,7 +90,7 @@ export const Contact: FC<ContactSectionProps> = ({
                     value={form.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                    className="w-full px-4 py-3 bg-purple-600/10 border border-purple-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300"
                     placeholder="Ditt Navn"
                   />
                 </div>
@@ -107,7 +105,7 @@ export const Contact: FC<ContactSectionProps> = ({
                     value={form.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                    className="w-full px-4 py-3 bg-purple-600/10 border border-purple-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300"
                     placeholder="din_epost@hotmail.com"
                   />
                 </div>
@@ -122,13 +120,13 @@ export const Contact: FC<ContactSectionProps> = ({
                     value={form.message}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-purple-600/10 border border-purple-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300 resize-none"
                     placeholder="La oss diskutere muligheter..."
                   />
                 </div>
 
                 <Button
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3"
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-700 hover:to-purple-800 text-white py-3 shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
                   type="submit"
                   disabled={sending}
                 >
