@@ -21,7 +21,7 @@ export const Contact: FC<ContactSectionProps> = ({
   result = null,
 }) => {
   return (
-    <section id="contact" className="min-h-screen relative bg-black/20 py-20">
+    <section id="contact" className="min-h-screen relative bg-black/20 py-28">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
           Ta Kontakt

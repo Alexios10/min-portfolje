@@ -49,69 +49,76 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 min-h-screen">
+    <section id="projects" className="py-28 min-h-screen bg-[#0a0118]">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
-          Mine Prosjekter
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-32">
           {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group hover:scale-105"
-            >
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4 text-sm md:text-base">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs md:text-sm"
+            <div key={index} className="relative">
+              <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent opacity-60" />
+
+              <div className="relative">
+                <div className="flex flex-col lg:flex-row gap-8 items-center">
+                  {/* Project Image */}
+                  <div className="lg:w-3/5 relative group">
+                    <div className="absolute inset-0 bg-purple-500/20 rounded-xl group-hover:bg-purple-500/30 transition-all duration-300" />
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full rounded-xl shadow-2xl group-hover:scale-[1.02] transition-all duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="lg:w-2/5 space-y-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      {project.title}
+                    </h3>
+
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-xl">
+                      <p className="text-gray-300 text-sm md:text-base">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs md:text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center"
                       >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex items-center gap-5 text-slate-800">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg flex items-center"
-                    >
-                      <span>Live</span>
-                      <ExternalLink className="ml-1 w-4" />
-                    </a>
-                    <a
-                      href={project.code}
-                      target="_blank"
-                      className="bg-blue-300 hover:bg-blue-400 transition-all px-5 py-1 rounded-lg flex items-center"
-                      onClick={(e) => {
-                        if (project.code === "") {
-                          e.preventDefault();
-                        }
-                      }}
-                    >
-                      <span>Kode</span>
-                      <FaGithub className="ml-1 w-4" />
-                    </a>
+                        <span>Live</span>
+                        <ExternalLink className="ml-2 w-4 h-4" />
+                      </a>
+                      <a
+                        href={project.code}
+                        target="_blank"
+                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center"
+                        onClick={(e) => {
+                          if (project.code === "") {
+                            e.preventDefault();
+                          }
+                        }}
+                      >
+                        <span>Kode</span>
+                        <FaGithub className="ml-2 w-4 h-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
