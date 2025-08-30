@@ -55,8 +55,8 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                 <span className="text-white"> løsninger...</span>
               </p>
               <p className="text-gray-400 text-lg mt-4 max-w-xl">
-                Frontend & Mobilutviklings Student med lidenskap for å bygge
-                eksepsjonelle brukeropplevelser og gi liv til ideer.
+                Engasjert utvikler under utdanning i frontend og mobilutvikling,
+                med mål om å skape digitale opplevelser som gjør en forskjell.
               </p>
             </div>
 
