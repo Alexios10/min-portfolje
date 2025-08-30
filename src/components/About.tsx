@@ -75,9 +75,8 @@ export const About = () => {
 
         {/* Floating Icons */}
         <div className="relative mt-20">
-          {/* Top row */}
-          <div className="flex justify-center gap-8 mb-8">
-            {technologies.slice(0, 7).map((tech, index) => (
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
+            {technologies.map((tech, index) => (
               <div
                 key={index}
                 className={`relative group ${styles.floatingIcon}`}
@@ -85,39 +84,14 @@ export const About = () => {
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl scale-125 group-hover:bg-purple-500/30 transition-all duration-300" />
+                <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-lg scale-125 group-hover:bg-purple-500/30 transition-all duration-300" />
                 <TooltipProvider delayDuration={100}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <div className="relative bg-[#1a1a1a] p-4 rounded-full transform hover:scale-110 transition-transform duration-300">
-                        <tech.icon className={`w-8 h-8 ${tech.color}`} />
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{tech.name}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom row */}
-          <div className="flex justify-center gap-8">
-            {technologies.slice(7).map((tech, index) => (
-              <div
-                key={index + 7}
-                className={`relative group ${styles.floatingIcon}`}
-                style={{
-                  animationDelay: `${index * 1}s`,
-                }}
-              >
-                <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl scale-125 group-hover:bg-purple-500/30 transition-all duration-300" />
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <div className="relative bg-[#1a1a1a] p-4 rounded-full transform hover:scale-110 transition-transform duration-300">
-                        <tech.icon className={`w-8 h-8 ${tech.color}`} />
+                      <div className="relative bg-[#1a1a1a] p-2 md:p-3 lg:p-4 rounded-full transform hover:scale-110 transition-transform duration-300">
+                        <tech.icon
+                          className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 ${tech.color}`}
+                        />
                       </div>
                     </TooltipTrigger>
                     <TooltipContent>

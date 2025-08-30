@@ -20,11 +20,11 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {/* Left side - Avatar/Illustration */}
+          {/* Left side - Avatar */}
           <div className="relative order-2 md:order-1">
             <div className="aspect-square relative">
               {/* Glow effect behind the image */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 via-purple-600/50 to-transparent blur-3xl" />
+              <div className="absolute inset-[25%] bg-gradient-to-tr from-purple-600/20 via-purple-600/30 to-transparent blur-2xl rounded-full" />
 
               <div className="relative z-10 w-full h-full flex items-center justify-center">
                 <img
