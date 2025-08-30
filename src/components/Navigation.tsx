@@ -56,7 +56,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
             key={item.name}
             onClick={() => handleNavClick(item.section)}
             className={`text-white text-sm font-normal cursor-pointer transition-all duration-[0.3s] ease-[ease] px-5 py-2 rounded-[50px] hover:bg-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 max-md:text-[13px] max-md:px-4 max-md:py-1.5 ${
-              isActive ? "bg-[rgba(255,255,255,0.15)]" : ""
+              isActive ? "bg-[rgba(100,5,150,0.91)]" : ""
             }`}
             aria-label={`Navigate to ${item.name}`}
           >
