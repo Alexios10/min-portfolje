@@ -40,7 +40,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
           <div className="flex justify-center items-center h-full order-1">
             {" "}
             <div className="space-y-6 flex flex-col items-center">
-              <h1 className="text-4xl md:text-6xl font-medium tracking-tight">
+              <h1 className="text-4xl md:text-6xl font-medium tracking-tight mr-3">
                 <span className="text-white">Hei! Jeg er </span>
                 <span className="bg-gradient-to-r from-purple-400 to-violet-400 text-transparent bg-clip-text">
                   Sattar Rahim
@@ -77,7 +77,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-purple-600/20 hover:bg-purple-600/10 hover:text-white px-8 py-6 text-lg"
+                    className="border-purple-600/20 hover:bg-purple-600/10 w-full hover:text-white px-8 py-6 text-lg"
                   >
                     Last Ned CV
                   </Button>
