@@ -20,7 +20,7 @@ export const Projects = () => {
       og skrive kommentarer. Hensikten med nettsiden er å hjelpe brukere med å finne det 
       treningssenteret som passer best for deres behov. Prosjektet er fortsatt under utvikling og ikke helt fullført ennå. 
       Mangle implementering av Google auth`,
-      image: "/assets/treningssentre.png",
+      image: "/assets/bestetreningssenter.png",
       tech: [
         "React",
         "Typescript",
