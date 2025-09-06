@@ -31,7 +31,7 @@ export const Projects = () => {
         "PostgreSQL",
         "Railway (Hosting)",
       ],
-      link: "https://training-hub-reviews.vercel.app/",
+      link: "https://bestetreningssenter.vercel.app/",
       code: "https://github.com/Alexios10/bestetreningssenter.git",
     },
     {
