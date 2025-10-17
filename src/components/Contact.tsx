@@ -65,13 +65,10 @@ export const Contact: FC<ContactSectionProps> = ({
                 <div className="flex items-center gap-4 p-4 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg backdrop-blur-sm transition-all duration-300 group">
                   <FaLinkedin className="w-6 h-6 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
                   <div>
-                    <a
-                      href="https://www.linkedin.com/in/sattar-rahim-082188236/"
-                      target="_blank"
-                      className="text-gray-400 text-sm md:text-base"
-                    >
+                    <div className="text-gray-400 text-sm md:text-base">
                       <span className="text-white font-medium">LinkedIn</span>
-                    </a>
+                      <p>https://www.linkedin.com/in/sattar-rahim-082188236/</p>
+                    </div>
                   </div>
                 </div>
               </div>
