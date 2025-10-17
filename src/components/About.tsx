@@ -1,10 +1,12 @@
 import {
   FaCss3Alt,
+  FaDocker,
   FaGitAlt,
   FaGithub,
   FaHtml5,
   FaLinkedin,
   FaReact,
+  FaSwift,
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -33,12 +35,14 @@ export const About = () => {
     { name: "React", icon: FaReact, color: "text-cyan-500" },
     { name: "C#", icon: TbBrandCSharp, color: "text-cyan-500" },
     { name: "Kotlin", icon: SiKotlin, color: "text-cyan-500" },
+    { name: "Swift", icon: FaSwift, color: "text-orange-400" },
     { name: "PostgreSQL", icon: BiLogoPostgresql, color: "text-cyan-500" },
     { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
 
     { name: "Tailwind", icon: RiTailwindCssFill, color: "text-teal-500" },
     { name: "Git", icon: FaGitAlt, color: "text-red-500" },
     { name: "GitHub", icon: FaGithub, color: "text-gray-400" },
+    { name: "Docker", icon: FaDocker, color: "text-blue-600" },
   ];
 
   return (
