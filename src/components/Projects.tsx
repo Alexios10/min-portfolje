@@ -53,7 +53,7 @@ export const Projects = () => {
         <div className="space-y-32">
           {projects.map((project, index) => (
             <div key={index} className="relative">
-              <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-radial from-blue-900/20 via-transparent to-transparent opacity-60" />
 
               <div className="relative">
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
@@ -84,7 +84,7 @@ export const Projects = () => {
                       {project.tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs md:text-sm"
+                          className="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs md:text-sm"
                         >
                           {tech}
                         </span>
@@ -95,7 +95,7 @@ export const Projects = () => {
                       <a
                         href={project.link}
                         target="_blank"
-                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center border border-purple-400/60"
+                        className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 transition-all px-5 py-2 rounded-lg flex items-center border border-blue-400/60"
                       >
                         <span>Live</span>
                         <ExternalLink className="ml-2 w-4 h-4" />
@@ -103,7 +103,7 @@ export const Projects = () => {
                       <a
                         href={project.code}
                         target="_blank"
-                        className="bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 transition-all px-5 py-2 rounded-lg flex items-center border border-purple-400/60"
+                        className="bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 transition-all px-5 py-2 rounded-lg flex items-center border border-blue-400/60"
                         onClick={(e) => {
                           if (project.code === "") {
                             e.preventDefault();

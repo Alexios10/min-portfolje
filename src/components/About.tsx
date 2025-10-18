@@ -51,13 +51,13 @@ export const About = () => {
       className="py-32 bg-[#0a0118] min-h-screen relative overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-radial from-blue-900/20 via-transparent to-transparent" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium text-white mb-6">
             <span>For øyeblikket søker jeg etter et </span>
-            <span className="text-purple-400">tverrfaglig</span> team
+            <span className="text-blue-400">tverrfaglig</span> team
           </h2>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed">
             Jeg er en dedikert frontendstudent med en sterk interesse for
@@ -88,7 +88,7 @@ export const About = () => {
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-lg scale-125 group-hover:bg-purple-500/30 transition-all duration-300" />
+                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-lg scale-125 group-hover:bg-blue-500/30 transition-all duration-300" />
                 <TooltipProvider delayDuration={100}>
                   <Tooltip>
                     <TooltipTrigger asChild>

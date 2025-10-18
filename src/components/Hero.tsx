@@ -11,8 +11,8 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
       id="home"
       className="min-h-screen bg-[#0a0118] flex items-center relative overflow-hidden pt-20 md:pt-0"
     >
-      {/* Purple gradient effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent" />
+      {/* Blue gradient effect */}
+      <div className="absolute inset-0 bg-gradient-radial from-blue-900/20 via-transparent to-transparent" />
 
       <div className="container mx-auto px-6 py-12">
         <div
@@ -24,7 +24,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
           <div className="relative order-2 md:order-1">
             <div className="aspect-square relative">
               {/* Glow effect behind the image */}
-              <div className="absolute inset-[25%] bg-gradient-to-tr from-purple-600/20 via-purple-600/30 to-transparent blur-2xl rounded-full" />
+              <div className="absolute inset-[25%] bg-gradient-to-tr from-blue-600/20 via-blue-600/30 to-transparent blur-2xl rounded-full" />
 
               <div className="relative z-10 w-full h-full flex items-center justify-center">
                 <img
@@ -42,7 +42,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
             <div className="space-y-6 flex flex-col items-center">
               <h1 className="text-4xl md:text-6xl font-medium tracking-tight mr-3">
                 <span className="text-white">Hei! Jeg er </span>
-                <span className="bg-gradient-to-r from-purple-400 to-violet-400 text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">
                   Sattar Rahim
                 </span>
               </h1>
@@ -53,7 +53,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                 </h2>
                 <p className="text-3xl md:text-5xl font-medium">
                   <span className="text-white">Skaper </span>
-                  <span className="text-purple-400">innovative</span>
+                  <span className="text-blue-400">innovative</span>
                   <span className="text-white"> løsninger...</span>
                 </p>
                 <p className="text-gray-400 text-lg mt-4 w-full sm:max-w-xl text-center">
@@ -68,7 +68,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                 <a href="#projects">
                   <Button
                     size="lg"
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
                   >
                     Se Mine Prosjekter
                   </Button>
@@ -77,7 +77,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-purple-600/20 hover:bg-purple-600/10 w-full hover:text-white px-8 py-6 text-lg"
+                    className="border-blue-600/20 hover:bg-blue-600/10 w-full hover:text-white px-8 py-6 text-lg"
                   >
                     Last Ned CV
                   </Button>

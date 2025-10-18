@@ -14,34 +14,6 @@ const Index = () => {
   const [sending, setSending] = useState(false);
   const [result, setResult] = useState<string | null>(null);
 
-  // Animation for name tag
-  const textFocusInStyle = `
-    @-webkit-keyframes text-focus-in {
-      0% {
-        filter: blur(12px);
-        opacity: 0;
-      }
-      100% {
-        filter: blur(0px);
-        opacity: 1;
-      }
-    }
-    @keyframes text-focus-in {
-      0% {
-        filter: blur(12px);
-        opacity: 0;
-      }
-      100% {
-        filter: blur(0px);
-        opacity: 1;
-      }
-    }
-    .text-focus-in {
-      -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-              animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    }
-  `;
-
   // Handle form input changes
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -87,8 +59,7 @@ const Index = () => {
 
   return (
     <>
-      <style>{textFocusInStyle}</style>
-      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         <Navigation />
         <Hero isVisible={isVisible} />
         <About />
@@ -106,7 +77,7 @@ const Index = () => {
           className="flex items-center justify-center relative"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <span className="bg-purple-600/20 absolute bottom-4 cursor-pointer hover:bg-purple-700/20 text-white rounded-full p-3 transition-all duration-300">
+          <span className="bg-blue-600/20 absolute bottom-4 cursor-pointer hover:bg-blue-700/20 text-white rounded-full p-3 transition-all duration-300">
             <MdKeyboardDoubleArrowUp size={30} />
           </span>
         </div>
