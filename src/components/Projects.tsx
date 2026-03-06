@@ -14,25 +14,24 @@ export const Projects = () => {
       code: "https://github.com/Alexios10/movix",
     },
     {
-      title: "Beste Treningssenter",
-      description: `En nettside for vurdering av treningssentre i Oslo, 
-      hvor brukere kan se informasjon om hvert treningssenter, legge igjen vurderinger 
-      og skrive kommentarer. Hensikten med nettsiden er å hjelpe brukere med å finne det 
-      treningssenteret som passer best for deres behov. Prosjektet er fortsatt under utvikling og ikke helt fullført ennå. 
-      Mangle implementering av Google auth`,
-      image: "/assets/bestetreningssenter.png",
+      title: "Mine Søknader",
+      description: `Jeg utviklet en brukervennlig webapplikasjon som hjelper brukere med å holde oversikt 
+      over sine jobbsøknader. Applikasjonen gjør det enkelt å registrere, oppdatere og følge opp søknadsprosessen. 
+      I prosjektet fokuserte jeg på enkel navigasjon, tydelig struktur og funksjoner som gjør det lettere å holde 
+      kontroll gjennom hele jobbsøkerprosessen.`,
+      image: "/assets/minesoknader.png",
       tech: [
         "React",
         "Typescript",
         "Tailwind CSS",
-        "Radix UI",
+        "Shadcn UI",
         "C#",
         ".NET",
         "PostgreSQL",
+        "Docker",
         "Railway (Hosting)",
       ],
-      link: "https://bestetreningssenter.vercel.app/",
-      code: "https://github.com/Alexios10/bestetreningssenter.git",
+      link: "https://www.minesoknader.no/login",
     },
     {
       title: "Vær App",
@@ -110,7 +109,11 @@ export const Projects = () => {
                           }
                         }}
                       >
-                        <span>Kode</span>
+                        {project.title === "Mine Søknader" ? (
+                          "Privat Repo"
+                        ) : (
+                          <span>Kode</span>
+                        )}
                         <FaGithub className="ml-2 w-4 h-4" />
                       </a>
                     </div>
