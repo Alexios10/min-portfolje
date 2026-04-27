@@ -32,7 +32,7 @@ export const Projects = () => {
         "Railway (Hosting)",
       ],
       link: "https://www.minesoknader.no/login",
-      kode: "https://github.com/Alexios10/Application-Tracker.git",
+      code: "https://github.com/Alexios10/Application-Tracker.git",
     },
     {
       title: "Vær App",
@@ -110,7 +110,7 @@ export const Projects = () => {
                           }
                         }}
                       >
-                        {project.title}
+                        <span>Kode</span>
                         <FaGithub className="ml-2 w-4 h-4" />
                       </a>
                     </div>
