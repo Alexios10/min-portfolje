@@ -32,6 +32,7 @@ export const Projects = () => {
         "Railway (Hosting)",
       ],
       link: "https://www.minesoknader.no/login",
+      kode: "https://github.com/Alexios10/Application-Tracker.git",
     },
     {
       title: "Vær App",
@@ -109,11 +110,7 @@ export const Projects = () => {
                           }
                         }}
                       >
-                        {project.title === "Mine Søknader" ? (
-                          "Privat Repo"
-                        ) : (
-                          <span>Kode</span>
-                        )}
+                        {project.title}
                         <FaGithub className="ml-2 w-4 h-4" />
                       </a>
                     </div>
