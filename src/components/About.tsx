@@ -60,20 +60,10 @@ export const About = () => {
             <span className="text-blue-400">tverrfaglig</span> team
           </h2>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-            Jeg er en dedikert frontendstudent med en sterk interesse for
-            teknologi og innovasjon. For øyeblikket studerer jeg samtidig som
-            jeg bygger praktiske ferdigheter gjennom egne prosjekter, der jeg
-            stadig utfordrer meg selv til å lære og utforske nye muligheter.
-          </p>
-          <br />
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-            Målet mitt er å bli en del av et dynamisk og tverrfaglig team hvor
-            jeg kan bidra til meningsfulle prosjekter, samtidig som jeg
-            videreutvikler meg som utvikler. Jeg har en spesiell interesse for
-            webutvikling, brukeropplevelsesdesign og moderne teknologier. Selv
-            om jeg fokuserer på frontend i dag, har jeg et klart mål om å
-            utvikle meg til en fullstack-utvikler som kan skape helhetlige
-            løsninger fra start til slutt.
+           Fullstack-utvikler med driv for innovasjon. Nettopp ferdig utdannet, 
+           men har bygget egne prosjekter hele veien – for jeg lærer best ved å gjøre. 
+           Jeg søker et tverrfaglig team hvor jeg kan bidra til meningsfulle prosjekter 
+           og utvikle meg videre. Web, UX og moderne tech – det er det jeg lever for.
           </p>
         </div>
 

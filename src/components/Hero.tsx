@@ -57,9 +57,9 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                   <span className="text-white"> løsninger...</span>
                 </p>
                 <p className="text-gray-400 text-lg mt-4 w-full sm:max-w-xl text-center">
-                  Engasjert utvikler under utdanning i frontend og
-                  mobilutvikling, med mål om å skape digitale opplevelser som
-                  gjør en forskjell.
+               Jeg er en engasjert fullstack-utvikler – 
+               nå ferdig utdannet og klar for å ta fatt på virkelige prosjekter. 
+               Jeg brenner for å lage digitale opplevelser som faktisk gjør en forskjell for folk.
                 </p>
               </div>
 
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                     Se Mine Prosjekter
                   </Button>
                 </a>
-                <a href="/assets/Utvikler-CV.pdf" download>
+                <a href="../../public/assets/Utvikler_CV.pdf" download>
                   <Button
                     size="lg"
                     variant="outline"

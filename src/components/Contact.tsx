@@ -46,11 +46,9 @@ export const Contact: FC<ContactSectionProps> = ({
                   La oss samarbeide!
                 </h3>
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                  Jeg er snart ferdig utdannet og ser etter spennende muligheter
-                  på juniornivå. Jeg ønsker å bidra til engasjerende prosjekter
-                  samtidig som jeg videreutvikler meg som utvikler. Ta gjerne
-                  kontakt – jeg vil gjerne høre mer om hvordan jeg kan være til
-                  nytte for teamet ditt.
+                Nylig ferdig utdannet og på utkikk etter spennende junioroppdrag. 
+                Jeg vil bidra i engasjerende prosjekter, og vokse som utvikler underveis. 
+                Ta gjerne kontakt – jeg vil gjerne høre hvordan jeg kan bidra hos dere.
                 </p>
               </div>
 
