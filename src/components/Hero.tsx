@@ -73,7 +73,7 @@ const Hero: React.FC<HeroSectionProps> = ({ isVisible }) => {
                     Se Mine Prosjekter
                   </Button>
                 </a>
-                <a href="../../public/assets/Utvikler_CV.pdf" download>
+                <a href="/assets/Utvikler_CV.pdf" download>
                   <Button
                     size="lg"
                     variant="outline"
