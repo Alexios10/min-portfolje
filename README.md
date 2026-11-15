@@ -1,31 +1,36 @@
-# Min portefølje
+# Sattar Rahim – portefølje
 
-Dette er min personlige portefølje bygget med Vite, TypeScript, React, shadcn-ui og Tailwind CSS.
+Personlig portefølje for Sattar Rahim, fullstack-utvikler i Oslo.
 
-## Om prosjektet
+**Live:** https://min-portfolje.vercel.app
 
-Her kan du se mine prosjekter, ferdigheter og kontaktinformasjon. Porteføljen er laget for å vise frem mitt arbeid og mine evner som utvikler.
+## Teknologi
 
-## Kom i gang lokalt
-
-1. Installer Node.js og npm.
-2. Installer avhengigheter:
-   ```sh
-   npm install
-   ```
-3. Start utviklingsserveren:
-   ```sh
-   npm run dev
-   ```
-
-## Teknologier brukt
-
+- React 18 og TypeScript
 - Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Tailwind CSS og shadcn/ui (Button, Tooltip)
+- EmailJS for kontaktskjemaet
 
-## Kontakt
+## Kjør lokalt
 
-Ta gjerne kontakt hvis du har spørsmål eller ønsker å samarbeide!
+```sh
+npm install
+npm run dev
+```
+
+Kontaktskjemaet trenger en `.env`-fil i rotmappen:
+
+```
+VITE_SERVICE_ID=...
+VITE_TEMPLATE_ID=...
+VITE_PUBLIC_KEY=...
+```
+
+## Skript
+
+| Kommando          | Hva den gjør                   |
+| ----------------- | ------------------------------ |
+| `npm run dev`     | Starter utviklingsserveren     |
+| `npm run build`   | Bygger for produksjon (`dist`) |
+| `npm run preview` | Forhåndsviser produksjonsbygget |
+| `npm run lint`    | Kjører ESLint                  |

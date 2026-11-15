@@ -1,25 +1,50 @@
+import { useState, type ChangeEvent, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 import { FaLinkedin } from "react-icons/fa";
 import { Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FC } from "react";
 
-interface ContactSectionProps {
-  handleInputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  handleSendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
-  form: { name: string; email: string; message: string };
-  sending?: boolean;
-  result?: string | null;
-}
+const emptyForm = { name: "", email: "", message: "" };
 
-export const Contact: FC<ContactSectionProps> = ({
-  handleSendEmail,
-  form,
-  handleInputChange,
-  sending = false,
-  result = null,
-}) => {
+export const Contact = () => {
+  const [form, setForm] = useState(emptyForm);
+  const [sending, setSending] = useState(false);
+  const [result, setResult] = useState<string | null>(null);
+
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSendEmail = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+    setResult(null);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        import.meta.env.VITE_PUBLIC_KEY
+      );
+      setResult("Takk for meldingen! Jeg svarer så fort jeg kan.");
+      setForm(emptyForm);
+      setTimeout(() => setResult(null), 5000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setResult(
+        "Noe gikk galt. Prøv igjen, eller send en e-post til sattar_saud@hotmail.com."
+      );
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -43,12 +68,12 @@ export const Contact: FC<ContactSectionProps> = ({
             <div className="space-y-8">
               <div>
                 <h3 className="text-xl md:text-2xl font-semibold text-white mb-6">
-                  La oss samarbeide!
+                  Ta kontakt
                 </h3>
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                Nylig ferdig utdannet og på utkikk etter spennende junioroppdrag. 
-                Jeg vil bidra i engasjerende prosjekter, og vokse som utvikler underveis. 
-                Ta gjerne kontakt – jeg vil gjerne høre hvordan jeg kan bidra hos dere.
+                  Jeg er tilgjengelig nå og åpen for stillinger som fullstack-
+                  eller frontendutvikler. Send en melding, ring, eller ta kontakt
+                  på LinkedIn.
                 </p>
               </div>
 
@@ -64,7 +89,7 @@ export const Contact: FC<ContactSectionProps> = ({
                         className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform duration-300"
                       />
                       <div>
-                        <p className="text-white font-medium">Epost</p>
+                        <p className="text-white font-medium">E-post</p>
                         <p className="text-gray-400 text-sm md:text-base">
                           sattar_saud@hotmail.com
                         </p>
@@ -96,7 +121,7 @@ export const Contact: FC<ContactSectionProps> = ({
                       className="flex items-center gap-4 p-4 bg-blue-600/10 hover:bg-blue-600/20 rounded-lg backdrop-blur-sm transition-all duration-300 group"
                     >
                       <FaLinkedin
-                        aria-hidden
+                        aria-hidden="true"
                         className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform duration-300"
                       />
                       <div className="text-gray-400 text-sm md:text-base">
@@ -111,7 +136,7 @@ export const Contact: FC<ContactSectionProps> = ({
 
             {/* Right section */}
             <div className="bg-blue-600/10 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-2xl border border-blue-500/20">
-              <h3 className="text-3xl font-bold text-white mb-8">Ta kontakt</h3>
+              <h3 className="text-3xl font-bold text-white mb-8">Send en melding</h3>
               <form
                 className="space-y-8"
                 onSubmit={handleSendEmail}
@@ -134,12 +159,12 @@ export const Contact: FC<ContactSectionProps> = ({
                       className="peer w-full pb-2 bg-transparent border-b-2 border-blue-500/30 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-all duration-300"
                       placeholder="Ditt navn"
                     />
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 peer-focus:w-full" />
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 peer-focus:w-full" />
                   </div>
 
                   <div className="relative">
                     <label htmlFor="email" className="sr-only">
-                      Epost
+                      E-post
                     </label>
                     <input
                       id="email"
@@ -150,9 +175,9 @@ export const Contact: FC<ContactSectionProps> = ({
                       required
                       autoComplete="email"
                       className="peer w-full pb-2 bg-transparent border-b-2 border-blue-500/30 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-all duration-300"
-                      placeholder="din_epost@hotmail.com"
+                      placeholder="Din e-post"
                     />
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 peer-focus:w-full" />
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 peer-focus:w-full" />
                   </div>
 
                   <div className="relative">
@@ -168,9 +193,9 @@ export const Contact: FC<ContactSectionProps> = ({
                       required
                       autoComplete="off"
                       className="peer w-full pb-2 bg-transparent border-b-2 border-blue-500/30 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-all duration-300"
-                      placeholder="La oss diskutere muligheter..."
+                      placeholder="Melding"
                     />
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 peer-focus:w-full" />
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 peer-focus:w-full" />
                   </div>
                 </fieldset>
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import emailjs from "@emailjs/browser";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
 import Navigation from "@/components/Navigation";
@@ -10,79 +9,31 @@ import { Contact } from "@/components/Contact";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sending, setSending] = useState(false);
-  const [result, setResult] = useState<string | null>(null);
-
-  // Handle form input changes
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  // EmailJS send handler
-  const handleSendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSending(true);
-    setResult(null);
-    try {
-      const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
-      const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
-      const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-        },
-        PUBLIC_KEY
-      );
-      setResult("Takk for din melding! Jeg svarer så fort jeg kan.");
-      setTimeout(() => {
-        setResult(null);
-      }, 3000);
-
-      setForm({ name: "", email: "", message: "" });
-    } catch (error) {
-      setResult("Noe gikk galt. Prøv igjen senere.");
-    } finally {
-      setSending(false);
-    }
-  };
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   return (
-    <>
-      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-        <Navigation />
-        <Hero isVisible={isVisible} />
-        <About />
-        <Projects />
-        <Contact
-          handleSendEmail={handleSendEmail}
-          form={form}
-          handleInputChange={handleInputChange}
-          sending={sending}
-          result={result}
-        />
+    <main className="min-h-screen bg-[#0a0118]">
+      <Navigation />
+      <Hero isVisible={isVisible} />
+      <About />
+      <Projects />
+      <Contact />
 
-        {/* Back to Top Button */}
-        <div
-          className="flex items-center justify-center relative"
+      {/* Back to top */}
+      <div className="flex justify-center pb-6">
+        <button
+          type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Til toppen"
+          className="bg-blue-600/20 hover:bg-blue-700/30 text-white rounded-full p-3 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
         >
-          <span className="bg-blue-600/20 absolute bottom-4 cursor-pointer hover:bg-blue-700/20 text-white rounded-full p-3 transition-all duration-300">
-            <MdKeyboardDoubleArrowUp size={30} />
-          </span>
-        </div>
-      </main>
-    </>
+          <MdKeyboardDoubleArrowUp size={30} aria-hidden="true" />
+        </button>
+      </div>
+    </main>
   );
 };
 
