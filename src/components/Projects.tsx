@@ -70,9 +70,9 @@ const featured: Project = {
   title: "minesoknader.no",
   description:
     "Fullstack-app der jobbsøkere logger inn, registrerer søknadene sine og følger statusen på hver av dem. Jeg bygget den fordi jeg selv mistet oversikten over egne søknader. I dag har den over 100 brukere, og jeg utvikler og drifter den alene: React-frontend, API i C#/.NET med JWT-innlogging, PostgreSQL og Docker.",
-  image: "/assets/minesoknader-demo.png",
+  image: "/assets/minesoknader-demo.webp",
   imageWidth: 1600,
-  imageHeight: 763,
+  imageHeight: 796,
   tech: [
     "React",
     "TypeScript",
